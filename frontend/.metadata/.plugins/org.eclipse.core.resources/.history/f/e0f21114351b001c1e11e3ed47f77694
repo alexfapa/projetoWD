@@ -1,0 +1,8 @@
+package com.wd.projeto01.entities;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Vendedor {
+	
+}

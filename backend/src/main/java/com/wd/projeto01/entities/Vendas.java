@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +21,10 @@ public class Vendas {
 	private Integer qtdVendas;
 	private Double valor;
 	private LocalDate data;
+	
+	@ManyToOne
+	@JoinColumn(name = "vendedor_id")
+	private Vendedor vendedor;
 	
 	
 	public Vendas() {}

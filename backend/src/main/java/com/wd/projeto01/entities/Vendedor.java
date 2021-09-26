@@ -42,3 +42,6 @@ public class Vendedor {
 	}
 		
 }
+
+//INSERT INTO TB_VENDEDOR VALUES(NULL, 'Francisco Alex Pinto')
+//INSERT INTO TB_VENDA VALUES(NULL, '2021-09-25', 10, 1000.0, 50)

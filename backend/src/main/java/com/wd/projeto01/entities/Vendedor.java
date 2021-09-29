@@ -12,24 +12,25 @@ public class Vendedor {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Integer id;
 	private String nome;
+	
 	
 	public Vendedor() {
 				
 	}
 
-	public Vendedor(Long id, String nome) {
+	public Vendedor(Integer id, String nome) {
 		super();
 		this.id = id;
-		this.nome = nome;
+		this.nome = nome;		
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -43,5 +44,3 @@ public class Vendedor {
 		
 }
 
-//INSERT INTO TB_VENDEDOR VALUES(NULL, 'Francisco Alex Pinto')
-//INSERT INTO TB_VENDA VALUES(NULL, '2021-09-25', 10, 1000.0, 50)

@@ -27,6 +27,8 @@ public class VendedorController {
 	@Autowired
 	private VendedorService servVendedor;
 	
+	
+	
 	@GetMapping
 	public ResponseEntity<List<VendedorDto>> listarVendedores() {
 		List<VendedorDto> listaVendedores = servVendedor
@@ -42,7 +44,7 @@ public class VendedorController {
 		
 		Vendedor vendedor = servVendedor.findById(id);
 		if(vendedor == null) {
-			return ResponseEntity.notFound().build();
+			return ResponseEntity.notFound().build();			
 		}
 		VendedorDto vendedorDto = new VendedorDto(vendedor.getNome());
 		

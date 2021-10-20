@@ -88,6 +88,14 @@ public class Vendas {
 	public void setData(LocalDate data) {
 		this.data = data;
 	}
-		
+
+
+	public Vendedor getVendedor() {
+		return vendedor;
+	}
+
+	public void setVendedor(Vendedor vendedor) {
+		this.vendedor = vendedor;
+	}	
 	
 }

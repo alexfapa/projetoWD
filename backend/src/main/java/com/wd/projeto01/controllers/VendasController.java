@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,11 +23,26 @@ public class VendasController {
 	@Autowired
 	private VendasService vendasService;
 	
+/*	
 	@GetMapping
 	public ResponseEntity<List<VendasDto>> buscarTodasVendas(){
-		List<VendasDto> vendas = vendasService.findAll().stream()
-				.map(x -> new VendasDto(x.getId(), x.getVisitas(), x.getValor())).collect(Collectors.toList());
+		List<Vendas> vendas = vendasService.findAll();
 		
-		return ResponseEntity.ok(vendas);
+		List<VendasDto> vendasDto = vendas.stream()
+				.map(x -> new VendasDto(x.getId(), x.getVisitas(), x.getQtdVendas(), x.getValor(), x.getVendedor().getNome()))
+				.collect(Collectors.toList());
+		
+				
+		return ResponseEntity.ok(vendasDto);
 	}
+*/	
+	@GetMapping
+	public ResponseEntity<Page<VendasDto>> buscarTodasVendasPaginadas(Pageable pageable){
+		
+		Page<VendasDto> listaVendas = vendasService.findAllPage(pageable);
+		
+		return ResponseEntity.ok(listaVendas);
+	}
+	
+	
 }
